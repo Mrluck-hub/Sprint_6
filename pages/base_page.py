@@ -12,12 +12,13 @@ class BasePage:
 
     @allure.step("Кликаем на элемент {locator}")
     def click_element(self, locator):
+        self.scroll_to_element(locator)
         WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable(locator)).click()
 
     @allure.step("Прокручиваем к элементу {locator}")
     def scroll_to_element(self, locator):
         element = self.find_element(locator)
-        self.driver.execute_script("arguments.scrollIntoView();", element)
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
 
     @allure.step("Вводим текст в поле {locator}")
     def send_keys(self, locator, text):
