@@ -21,4 +21,4 @@ class TestNavigation:
         home.open_home()
         home.click_element(HomePageLocators.ORDER_BUTTON_UP)
         home.click_element(HomePageLocators.LOGO_SCOOTER)
-        assert driver.current_url == "https://qa-scooter.praktikum-services.ru"
+        assert driver.current_url == "https://qa-scooter.praktikum-services.ru" + "/"
