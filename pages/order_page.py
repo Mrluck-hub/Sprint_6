@@ -2,6 +2,7 @@ import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from locators.order_page_locators import OrderPageLocators
+from selenium.webdriver.common.keys import Keys
 
 class OrderPage(BasePage):
     @allure.step("Заполняем форму заказа")
@@ -15,6 +16,8 @@ class OrderPage(BasePage):
         self.click_element(OrderPageLocators.NEXT_BUTTON)
         
         self.send_keys(OrderPageLocators.DATE_INPUT, date)
+        data_input = self.find_element(OrderPageLocators.DATE_INPUT)
+        data_input.send_keys(Keys.ENTER)
         self.click_element(OrderPageLocators.RENT_PERIOD_DROPDOWN)
         self.click_element(OrderPageLocators.RENT_PERIOD_DAY)
         self.click_element(OrderPageLocators.ORDER_FINAL_BUTTON)
