@@ -3,6 +3,7 @@ from pages.home_page import HomePage
 from locators.home_page_locators import HomePageLocators
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from curl import URL_HOME
 
 @allure.feature("Навигация")
 class TestNavigation:
@@ -21,4 +22,4 @@ class TestNavigation:
         home.open_home()
         home.click_element(HomePageLocators.ORDER_BUTTON_UP)
         home.click_element(HomePageLocators.LOGO_SCOOTER)
-        assert driver.current_url == "https://qa-scooter.praktikum-services.ru" + "/"
+        assert driver.current_url == URL_HOME + "/"

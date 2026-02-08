@@ -1,11 +1,12 @@
 import allure
 from pages.base_page import BasePage
 from locators.home_page_locators import HomePageLocators
+from curl import URL_HOME
 
 class HomePage(BasePage):
     @allure.step("Открываем главную страницу")
     def open_home(self):
-        self.driver.get("https://qa-scooter.praktikum-services.ru")
+        self.driver.get(URL_HOME)
 
     @allure.step("Принимаем куки")
     def accept_cookies(self):
