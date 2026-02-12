@@ -12,4 +12,4 @@ class TestFaq:
         home.open_home()
         home.accept_cookies()
         home.click_faq_question(index)
-        assert expected in home.get_faq_answer_text(index)
+        assert expected in home.get_faq_answer(index)
