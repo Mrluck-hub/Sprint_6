@@ -1,0 +1,1 @@
+URL_HOME = "https://qa-scooter.praktikum-services.ru"
